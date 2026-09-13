@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Timezone Digital Clock</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🌍 World Clock</h1>
+            <p class="subtitle">Real-time display across multiple timezones</p>
+        </header>
+
+        <!-- Controls -->
+        <div class="controls">
+            <button id="toggleFormat" class="btn btn-primary" title="Toggle 12/24 hour format">
+                📅 12-Hour Format
+            </button>
+            <button id="toggleSecond" class="btn btn-secondary" title="Toggle seconds display">
+                ⏱️ Show Seconds
+            </button>
+            <button id="addClock" class="btn btn-success" title="Add a new timezone">
+                ➕ Add Timezone
+            </button>
+        </div>
+
+        <!-- Add Timezone Modal -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Add New Timezone</h2>
+                <div class="modal-body">
+                    <input 
+                        type="text" 
+                        id="cityInput" 
+                        placeholder="City name (e.g., Tokyo, New York, London)"
+                        class="modal-input"
+                    >
+                    <select id="timezoneSelect" class="modal-input">
+                        <option value="">Select timezone...</option>
+                    </select>
+                    <div class="suggestion-list" id="suggestionList"></div>
+                </div>
+                <div class="modal-footer">
+                    <button id="cancelBtn" class="btn btn-secondary">Cancel</button>
+                    <button id="addBtn" class="btn btn-primary">Add Clock</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Clock Display -->
+        <div class="clock-grid" id="clockGrid">
+            <!-- Clocks will be dynamically inserted here -->
+        </div>
+
+        <!-- Empty State -->
+        <div id="emptyState" class="empty-state">
+            <p>No timezones added yet.</p>
+            <p>Click "➕ Add Timezone" to get started!</p>
+        </div>
+    </div>
+
+    <script src="timezones.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
